@@ -1,6 +1,6 @@
 <?php 
     include("connection.php");
-    include("login.php");
+    include("admin_login.php");
 ?>
     
 <html>
@@ -11,14 +11,13 @@
     </head>
     <body>
         <div id="form">
-            <h1>Voter Login Form</h1>
-            <form name="form" action="login.php" onsubmit="return isvalid()" method="POST">
-                <label>Voter ID: </label>
-                <input type="text" id="voterId" name="user"></br></br>
+            <h1>Admin Login Form</h1>
+            <form name="form" action="admin_login.php" onsubmit="return isvalid()" method="POST">
+                <label>Admin ID: </label>
+                <input type="text" id="adminID" name="admin"></br></br>
                 <label>Password: </label>
                 <input type="password" id="pass" name="pass"></br></br>
                 <input type="submit" id="btn" value="Login" name="submit"/>
-                <input type="button" id="btn-admin" value="Login as Admin" onclick="window.location.href='index2.php'" />
             </form>
         </div>
         <script>
@@ -26,11 +25,11 @@
                 var user = document.form.user.value;
                 var pass = document.form.pass.value;
                 if(user.length=="" && pass.length==""){
-                    alert("Voter Id and password field is empty!!!");
+                    alert("AdminID and password field is empty!!!");
                     return false;
                 }
                 else if(user.length==""){
-                    alert("Voter Id field is empty!!!");
+                    alert("Admin ID field is empty!!!");
                     return false;
                 }
                 else if(pass.length==""){

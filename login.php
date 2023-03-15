@@ -10,7 +10,7 @@
         $count = mysqli_num_rows($result);  
         
         if($count == 1){  
-            header("Location: welcome.php");
+            header("Location: welcome3.php");
         }  
         else{  
             echo  '<script>

@@ -15,6 +15,7 @@
       margin: 20px;
       padding: 20px;
     }
+    
   </style>
 </head>
 <body>
@@ -27,6 +28,7 @@
       <button onclick="window.location.href = 'candidates.php';">Candidates</button>
       <button onclick="window.location.href = 'votes.php';">Votes</button>
     </div>
+    <button onclick="window.location.href = 'index.php';">Logout</button>
   </div>
 </body>
 </html>

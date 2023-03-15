@@ -7,14 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidates</title>
     <style>
-        body {
-            background-color: lightgray;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+    body {
+        background-color: lightgray;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .candidate-container img {
+        background-color: #ccc;
+        padding: 10px;
+        border-radius: 50%;
+        border: none;
+
+        width: 145px;
+        height: 145px;
+        object-fit: cover;
+        object-position: center;
+        margin-bottom: 10px;
+    }
+</style>
+
 
 </head>
 
@@ -34,14 +48,15 @@
     echo "<div style='display:flex; flex-wrap:wrap;'>";
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo "<div style='padding:10px;'>";
-            echo "<img src='" . $row["image"] . "' alt='" . $row["name"] . "' width='150' height='150'>";
+            echo "<div class='candidate-container' style='padding:10px;'>";
+            echo "<img class='candidate-img' src='" . $row["image"] . "' alt='" . $row["name"] . "'>";
             echo "<br>" . $row["name"] . "</div>";
         }
+        
     }
     //add candidate button
     echo "<div style='padding:10px;'>";
-    echo "<img src='images/plus.png' alt='Add Candidate' width='150' height='150' onclick='showForm()'>";
+    echo "<img src='images/plus.png' alt='Add Candidate' width='145' height='145' onclick='showForm()'>";
     echo "<br>Add Candidate</div></div>";
 
     //fetch vice presidential candidates from the database
@@ -53,14 +68,15 @@
     echo "<div style='display:flex; flex-wrap:wrap;'>";
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo "<div style='padding:10px;'>";
-            echo "<img src='" . $row["image"] . "' alt='" . $row["name"] . "' width='150' height='150'>";
+            echo "<div class='candidate-container' style='padding:10px;'>";
+            echo "<img class='candidate-img' src='" . $row["image"] . "' alt='" . $row["name"] . "'>";
             echo "<br>" . $row["name"] . "</div>";
         }
+        
     }
     //add candidate button
     echo "<div style='padding:10px;'>";
-    echo "<img src='images/plus.png' alt='Add Candidate' width='150' height='150' onclick='showForm()'>";
+    echo "<img src='images/plus.png' alt='Add Candidate' width='145' height='145' onclick='showForm()'>";
     echo "<br>Add Candidate</div></div>";
 
     //fetch secretary candidates from the database
@@ -72,14 +88,15 @@
     echo "<div style='display:flex; flex-wrap:wrap;'>";
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo "<div style='padding:10px;'>";
-            echo "<img src='" . $row["image"] . "' alt='" . $row["name"] . "' width='150' height='150'>";
+            echo "<div class='candidate-container' style='padding:10px;'>";
+            echo "<img class='candidate-img' src='" . $row["image"] . "' alt='" . $row["name"] . "'>";
             echo "<br>" . $row["name"] . "</div>";
         }
+        
     }
     //add candidate button
     echo "<div style='padding:10px;'>";
-    echo "<img src='images/plus.png' alt='Add Candidate' width='150' height='150' onclick='showForm()'>";
+    echo "<img src='images/plus.png' alt='Add Candidate' width='145' height='145' onclick='showForm()'>";
     echo "<br>Add Candidate</div></div>";
 
     //HTML form for adding candidates
@@ -100,6 +117,7 @@
     echo "<input type='file' id='image' name='image' accept='image/*' required>";
     echo "<br><br>";
     echo "<input type='submit' value='Submit'>";
+
     echo "<input type='button' value='Cancel' onclick='hideForm()'>";
     echo "</form>";
     echo "</div>";

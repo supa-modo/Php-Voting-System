@@ -17,7 +17,11 @@
         }
         body{
             background-color: lightgray;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
         }
+        
     </style>
 </head>
 
